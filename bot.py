@@ -11,14 +11,10 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 
-def main():
-    app = Application.builder().token(BOT_TOKEN).build()
+app = Application.builder().token(BOT_TOKEN).build()
 
-    app.add_handler(CommandHandler("start", start))
+app.add_handler(CommandHandler("start", start))
 
-    print("Bot Started...")
-    app.run_polling()
+print("Bot Started...")
 
-
-if __name__ == "__main__":
-    main()
+app.run_polling()
